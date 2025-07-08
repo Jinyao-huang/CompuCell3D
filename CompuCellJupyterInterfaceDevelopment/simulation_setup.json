@@ -11,10 +11,10 @@
         "anneal": 0,
         "fluctuation_amplitude": 10.0,
         "fluctuation_amplitude_function": "Min",
-        "boundary_x": "NoFlux",
-        "boundary_y": "NoFlux",
+        "boundary_x": "Periodic",
+        "boundary_y": "Periodic",
         "boundary_z": "NoFlux",
-        "neighbor_order": 1,
+        "neighbor_order": 2,
         "debug_output_frequency": 0,
         "random_seed": null,
         "lattice_type": "Cartesian",
@@ -24,6 +24,18 @@
     "CellType": [
         {
             "Cell type": "Medium",
+            "freeze": false
+        },
+        {
+            "Cell type": "T1",
+            "freeze": false
+        },
+        {
+            "Cell type": "T2",
+            "freeze": false
+        },
+        {
+            "Cell type": "T3",
             "freeze": false
         }
     ],

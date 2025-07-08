@@ -626,11 +626,11 @@ class SpecificationSetupUI:
     def setup_event_handlers(self):
         # Metadata handlers
         self.widgets["num_proc"].observe(
-            lambda change: setattr(self.metadata, 'num_processors', change.new), 
+            lambda change: [setattr(self.metadata, 'num_processors', change.new), self.save_to_json()],
             names='value'
         )
         self.widgets["debug_freq"].observe(
-            lambda change: setattr(self.metadata, 'debug_output_frequency', change.new),
+            lambda change: [setattr(self.metadata, 'debug_output_frequency', change.new), self.save_to_json()],
             names='value'
         )
 
@@ -657,18 +657,50 @@ class SpecificationSetupUI:
         for name, widget in self.potts_widget.widgets.items():
             if hasattr(widget, 'observe'):
                 widget.observe(
-                    lambda change, prop=name: self.update_potts_core(prop, change.new),
+                    lambda change, prop=name: [self.update_potts_core(prop, change.new), self.save_to_json()],
                     names='value'
                 )
 
         # CellType handlers
         self.celltype_widget.widgets["add_button"].on_click(
-            lambda _: self.update_cell_types()
+            lambda _: [self.update_cell_types(), self.save_to_json()]
+        )
+        self.celltype_widget.widgets["preset_dropdown"].observe(
+            lambda change: self.save_to_json(),
+            names='value'
+        )
+        self.celltype_widget.widgets["freeze_checkbox"].observe(
+            lambda change: self.save_to_json(),
+            names='value'
         )
 
         # Constraints handlers
         self.constraints_widget.widgets["add_button"].on_click(
             lambda _: self.save_to_json()
+        )
+        self.constraints_widget.widgets["vol_enabled"].observe(
+            lambda change: self.save_to_json(),
+            names='value'
+        )
+        self.constraints_widget.widgets["target_volume"].observe(
+            lambda change: self.save_to_json(),
+            names='value'
+        )
+        self.constraints_widget.widgets["lambda_volume"].observe(
+            lambda change: self.save_to_json(),
+            names='value'
+        )
+        self.constraints_widget.widgets["surf_enabled"].observe(
+            lambda change: self.save_to_json(),
+            names='value'
+        )
+        self.constraints_widget.widgets["target_surface"].observe(
+            lambda change: self.save_to_json(),
+            names='value'
+        )
+        self.constraints_widget.widgets["lambda_surface"].observe(
+            lambda change: self.save_to_json(),
+            names='value'
         )
 
         # Update cell type options in constraints when cell types change
@@ -790,5 +822,5 @@ class SpecificationSetupUI:
         self.save_to_json()
 
 # Main execution
-if __name__ == "__main__":
-    ui = SpecificationSetupUI()
+# if __name__ == "__main__":
+#     ui = SpecificationSetupUI()
