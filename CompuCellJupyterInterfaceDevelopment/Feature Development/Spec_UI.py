@@ -189,6 +189,8 @@ class PluginWidget:
             self.create_external_potential_widgets(saved_values)
         elif self.plugin_name == "FocalPointPlasticityPlugin":
             self.create_focal_point_plasticity_widgets(saved_values)
+        elif self.plugin_name == "SecretionPlugin":
+            self.create_secretion_widgets(saved_values)
         # Add other plugins as needed...
 
         # Set up active toggle
@@ -528,6 +530,15 @@ class PluginWidget:
 
     def create_focal_point_plasticity_widgets(self, saved_values):
         """Widgets for FocalPointPlasticityPlugin (no input boxes)"""
+        self.widgets["config_container"].children = []
+        self.widgets["config_container"].add_class('plugin-checkbox-bottom-spacing')
+        self.widgets["config_container"].layout.display = 'block'
+
+    def create_secretion_widgets(self, saved_values):
+        defaults = SecretionPlugin().spec_dict
+        # Add basic widgets for SecretionPlugin parameters as needed
+        # For now, just a placeholder to allow enabling/disabling
+        # You can expand this with real parameters as needed
         self.widgets["config_container"].children = []
         self.widgets["config_container"].add_class('plugin-checkbox-bottom-spacing')
         self.widgets["config_container"].layout.display = 'block'
