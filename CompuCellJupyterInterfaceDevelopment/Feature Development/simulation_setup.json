@@ -4,17 +4,17 @@
         "debug_output_frequency": 0
     },
     "PottsCore": {
-        "dim_x": 1,
-        "dim_y": 1,
+        "dim_x": 100,
+        "dim_y": 100,
         "dim_z": 1,
         "steps": 0,
         "anneal": 0,
         "fluctuation_amplitude": 10.0,
         "fluctuation_amplitude_function": "Min",
         "boundary_x": "NoFlux",
-        "boundary_y": "Periodic",
+        "boundary_y": "NoFlux",
         "boundary_z": "NoFlux",
-        "neighbor_order": 1,
+        "neighbor_order": 2,
         "debug_output_frequency": 0,
         "random_seed": null,
         "lattice_type": "Cartesian",
@@ -26,7 +26,41 @@
             "Cell type": "Medium",
             "id": 0,
             "freeze": false
+        },
+        {
+            "Cell type": "Condensing",
+            "id": 1,
+            "freeze": false
+        },
+        {
+            "Cell type": "NonCondensing",
+            "id": 2,
+            "freeze": false
         }
     ],
-    "Plugins": {}
+    "Plugins": {
+        "VolumePlugin": {
+            "params": [
+                {
+                    "CellType": "Medium",
+                    "target_volume": 25.0,
+                    "lambda_volume": 2.0
+                },
+                {
+                    "CellType": "Condensing",
+                    "target_volume": 25.0,
+                    "lambda_volume": 2.0
+                },
+                {
+                    "CellType": "NonCondensing",
+                    "target_volume": 25.0,
+                    "lambda_volume": 2.0
+                }
+            ]
+        }
+    },
+    "Initializer": {
+        "type": "BlobInitializer",
+        "regions": []
+    }
 }
