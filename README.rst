@@ -8,6 +8,11 @@ in Python. CompuCell3D is supported on Windows, Mac and Linux.
 Website
 -------
 `CompuCell3D project page <https://compucell3d.org/>`_
+Please check the website for setup and installation instruction. 
 
-This is mainly work for Jupyter Widget Interface Development.
-- Current stage: Prototyping. Please check the Widget folder for more information 
+Work done Jupyter Interface Widget Development
+-------
+Main Folder: `CompuCellJupyterInterfaceDevelopment <https://github.com/Jinyao-huang/CompuCell3D/tree/8deeb2f6964729b6a8539a7900964a82b862dab8/CompuCellJupyterInterfaceDevelopment/>`_
+
+README for Navigation: `README for Widget <https://github.com/Jinyao-huang/CompuCell3D/blob/8deeb2f6964729b6a8539a7900964a82b862dab8/CompuCellJupyterInterfaceDevelopment/README.md/>`_
+
