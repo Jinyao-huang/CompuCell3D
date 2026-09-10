@@ -34,9 +34,9 @@ This project provides a comprehensive Jupyter Notebook interface for setting up 
 Download the appropriate package for your OS:
    [CompuCell3D installation](https://compucell3d.org/SrcBin)
 
-### Step 2: Step Up a Python Environment
+### Step 2: Set Up a Python Environment
+```bash
 # Create virtual environment (recommended)
-```
 python -m venv cc3d_env
 source cc3d_env/bin/activate  # Linux/macOS
 cc3d_env\Scripts\activate    # Windows
@@ -45,10 +45,10 @@ cc3d_env\Scripts\activate    # Windows
 pip install ipywidgets>=8.0.0 jupyter>=1.0.0 numpy>=1.21.0
 ```
 
-### Step 3:  Install the Widget
-```
-git clone (Github link)
-cd cc3d-jupyter-widget
+### Step 3: Install the Widget
+```bash
+git clone https://github.com/Jinyao-huang/CompuCell3D.git
+cd CompuCell3D/CompuCellJupyterInterfaceDevelopment
 jupyter notebook
 ```
 

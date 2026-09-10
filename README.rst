@@ -11,8 +11,8 @@ Website
 Please check the website for setup and installation instruction. 
 
 Work done Jupyter Interface Widget Development
--------
-Main Folder: `CompuCellJupyterInterfaceDevelopment <https://github.com/Jinyao-huang/CompuCell3D/tree/8deeb2f6964729b6a8539a7900964a82b862dab8/CompuCellJupyterInterfaceDevelopment/>`_
+------------------------------------------------
+Main Folder: `CompuCellJupyterInterfaceDevelopment <https://github.com/Jinyao-huang/CompuCell3D/tree/master/CompuCellJupyterInterfaceDevelopment/>`_
 
-README for Navigation: `README for Widget <https://github.com/Jinyao-huang/CompuCell3D/blob/8deeb2f6964729b6a8539a7900964a82b862dab8/CompuCellJupyterInterfaceDevelopment/README.md/>`_
+README for Navigation: `README for Widget <https://github.com/Jinyao-huang/CompuCell3D/blob/master/CompuCellJupyterInterfaceDevelopment/README.md>`_
 
